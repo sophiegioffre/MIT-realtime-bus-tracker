@@ -25,36 +25,41 @@ const busStops = [
     [-71.118625, 42.374863],
 ];
 
+
 function makeBusStopMarker () {
     busStops.forEach((item) => {
-        console.log(item);
-        new mapboxgl.Marker ()
+        new mapboxgl.Marker ({color: 'red'})
         .setLngLat(item)
-        .addTo(map);
+        .addTo(map)
     });
 }
 
+//Call makeBusStopMarker() function
 makeBusStopMarker();
+
+
+//Object to hold bus markers
+const markerObj = {};
 
 //Run bus tracker
 async function run(){
-    // get bus data    
+    //Get bus data    
 	const locations = await getBusLocations();
 	console.log(new Date());
-	console.log(locations[3]);
+	console.log(locations);
     
     //Create Marker
-    let marker = new mapboxgl.Marker ()
-        .setLngLat(locations[3])
-        .addTo(map);
-    /*
-    let counter = 0;
-    if (counter >= locations.length) return;
-    marker.setLngLat(locations[counter]);
-    counter++;
-    */
+    locations.forEach ((item) => {
+        if (markerObj[item.id]) {
+            markerObj[item.id].setLngLat([item.attributes.longitude, item.attributes.latitude]);
+        } else {
+            markerObj[item.id] = new mapboxgl.Marker ()
+                .setLngLat([item.attributes.longitude, item.attributes.latitude])
+                .addTo(map);
+        }
+    })
     
-	// timer
+	// Timer
 	setTimeout(run, 15000);
 }
 
@@ -63,17 +68,10 @@ async function getBusLocations(){
 	const url = 'https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip';
 	const response = await fetch(url);
 	const json = await response.json();
-    const busLocArr = [];
-    for (let i = 0; i < json.data.length; i++) {
-        let lng = json.data[i].attributes.longitude;
-        let lat = json.data[i].attributes.latitude;
-        let busLoc = [lng, lat];
-        busLocArr.push(busLoc);
-    }
-    console.log('busLoc:' + busLocArr)
-	return busLocArr;
+    console.log(json.data)
+	return json.data;
 }
 
-
+//Call run() function
 run();
 
