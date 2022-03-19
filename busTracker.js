@@ -1,5 +1,5 @@
-//Get map access token
-mapboxgl.accessToken = 'pk.eyJ1IjoiYXN0cm9sYXZlbmRlciIsImEiOiJjbDBvZ2puZ2wxbWY5M2RsYWh1ZGVyaWJqIn0.J061yAV1Aati2JSJaWnr-A';
+//Get map access token from https://www.mapbox.com/ 
+mapboxgl.accessToken = '';
 
 //Display map
 const map = new mapboxgl.Map({
@@ -28,7 +28,7 @@ const busStops = [
 
 function makeBusStopMarker () {
     busStops.forEach((item) => {
-        new mapboxgl.Marker ({color: 'red'})
+        new mapboxgl.Marker ({color: 'orange'})
         .setLngLat(item)
         .addTo(map)
     });
@@ -53,7 +53,9 @@ async function run(){
         if (markerObj[item.id]) {
             markerObj[item.id].setLngLat([item.attributes.longitude, item.attributes.latitude]);
         } else {
-            markerObj[item.id] = new mapboxgl.Marker ()
+            const newBusMarker = document.createElement('div');
+            newBusMarker.className = 'new-bus-marker';
+            markerObj[item.id] = new mapboxgl.Marker (newBusMarker)
                 .setLngLat([item.attributes.longitude, item.attributes.latitude])
                 .addTo(map);
         }
