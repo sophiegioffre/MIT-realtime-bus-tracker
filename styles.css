@@ -13,15 +13,16 @@ body {
 
 .map-overlay-top {
     position: absolute;
-    left: 0;
+    left: 10px;
+    top: 10px;
     padding: 10px;
     background-color: rgba(0,0,0,.7);
 }
 
 .map-overlay-left {
     position: absolute;
-    left: 0;
-    top: 100px;
+    left: 10px;
+    top: 110px;
     padding: 5px;
     background-color: rgba(0,0,0,.7);
 }
@@ -34,12 +35,22 @@ body {
     color: rgb(237, 237, 237);
     text-align: center;
 }
+
 h4 {
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
+    align-items: baseline;
+    vertical-align: middle;
+}
+
+.new-bus-marker {
+    background-image: url('./images/newBusMarker.jpg');
+    height: 30px;
+    width: 30px;
+    background-size: cover;
 }
