@@ -7,15 +7,14 @@ Improvements:
 - Created a .forEach loop containing if-else conditions that updates and moves the single marker assigned to each bus rather than creating a new marker for each 15s update.
 - Added static bus stops along the portion of the route that goes between MIT and Harvard. These are designated by red map markers. 
 - Added a map overlay containing a title and map key to explain what the map is showing and how to read it. I changed experimented with background opacity, font family, and color. I am pretty happy with how it looks.
-
+- Customized the blue map markers to an icon of a bus
+- Customized the red map markers to coordinate with the styles/colors of the map
 
 ## HOW TO RUN
 Download all files to your local drive and load the index.html file into a Google Chrome browser.
 
-# ROAD MAP TO FUTURE IMPROVEMENTS
+## ROAD MAP TO FUTURE IMPROVEMENTS
 I plan to improve this project in the following ways:
-- Customize the blue map markers to an icon of a bus
-- Customize the red map markers to an icon of a bus stop
 - Add a hover event for each bus marker to show bus status, number, and destination
 
 ## LICENSE
