@@ -11,7 +11,7 @@ Improvements:
 - Customized the red map markers to coordinate with the styles/colors of the map
 
 ## HOW TO RUN
-Download all files to your local drive and load the index.html file into a Google Chrome browser.
+Clone all files in this repo to your local drive. Then open the index.html file in a browser, perferibly Google Chrome. Watch for the buses to update their real-time locations every 15 seconds.
 
 ## ROAD MAP TO FUTURE IMPROVEMENTS
 I plan to improve this project in the following ways:
