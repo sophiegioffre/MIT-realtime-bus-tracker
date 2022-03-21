@@ -16,7 +16,7 @@ body {
     left: 10px;
     top: 10px;
     padding: 10px;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(250, 174, 59, 0.7);
 }
 
 .map-overlay-left {
@@ -24,15 +24,15 @@ body {
     left: 10px;
     top: 110px;
     padding: 5px;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(250, 174, 59, 0.7);
 }
 
 .map-title {
-    color: rgb(237, 237, 237);
+    color: rgb(6, 74, 83);
 }
 
 .key {
-    color: rgb(237, 237, 237);
+    color: rgb(6, 74, 83);
     text-align: center;
 }
 
