@@ -1,5 +1,5 @@
 # Real Time Bus Tracker
-This project shows real-time movement of all of busses on route 1 in Boston, MA, with a focus on the route between MIT and Harvard. 
+
 
 ## DESCRIPTION 
 This project shows a map of Boston centered on the area around MIT and Harvard. Bus stops between MIT and Harvard are designated with red map markers. Each blue map marker refers to a different bus. Every 15s the map updates the locations of each bus, moving the blue map markers. 
